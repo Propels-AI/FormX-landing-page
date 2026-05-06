@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import BlogCard from '@/components/blog/BlogCard.astro';
 import { CATEGORY_LABELS } from '@/lib/blog';
+import '@/styles/blog.css';
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog', ({ data }) => !data.draft);
