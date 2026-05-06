@@ -24,7 +24,7 @@ type FeaturedItem = {
 
 const featuredItem: FeaturedItem | undefined = pinnedWhatsNew
   ? {
-      href: `/whats-new/${pinnedWhatsNew.id}`,
+      href: `/whats-new/${pinnedWhatsNew.id}/`,
       title: pinnedWhatsNew.data.title,
       image: pinnedWhatsNew.data.featured_image,
       imageAlt: pinnedWhatsNew.data.title,
@@ -36,7 +36,7 @@ const featuredItem: FeaturedItem | undefined = pinnedWhatsNew
       const p = allPosts.find((p) => p.data.featured) ?? allPosts[0];
       return p
         ? {
-            href: `/blog/${p.id}`,
+            href: `/blog/${p.id}/`,
             title: p.data.title,
             image: p.data.featured_image,
             imageAlt: p.data.featured_image_alt || p.data.title,
@@ -59,7 +59,7 @@ type GridItem = {
 };
 
 const blogGridItems: GridItem[] = allPosts.map((p) => ({
-  href: `/blog/${p.id}`,
+  href: `/blog/${p.id}/`,
   title: p.data.title,
   image: p.data.featured_image,
   imageAlt: p.data.featured_image_alt || p.data.title,
@@ -71,7 +71,7 @@ const blogGridItems: GridItem[] = allPosts.map((p) => ({
 const whatsNewGridItems: GridItem[] = allWhatsNew
   .filter((w) => w.id !== PINNED_WHATS_NEW_ID)
   .map((w) => ({
-    href: `/whats-new/${w.id}`,
+    href: `/whats-new/${w.id}/`,
     title: w.data.title,
     image: w.data.featured_image,
     imageAlt: w.data.title,
