@@ -51,6 +51,7 @@
   from = "/*/"
   to = "/:splat"
   status = 301
+  force = true
 
 # /smartadapt (old Webflow path) → correct Astro page
 [[redirects]]
