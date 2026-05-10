@@ -1,19 +1,152 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import FAQSection from '@/components/sections/FAQSection.astro';
+import StatCard from '@/components/sections/StatCard.astro';
+import FeatureGrid from '@/components/sections/FeatureGrid.astro';
+import JsonLd from '@/components/shared/JsonLd.astro';
+
+const softwareAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OCR Receipt Scanner",
+  "applicationCategory": "BusinessApplication",
+  "description": "Free OCR receipt scanner. Extract merchant name, items, totals, and dates from any receipt in 50+ languages. Export to Excel, CSV, or JSON.",
+  "provider": {
+    "@type": "Organization",
+    "name": "FormX.ai",
+    "url": "https://formx.ai"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What data does FormX extract from a receipt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FormX extracts merchant name and address, date and time, itemised line items (description, quantity, unit price), subtotals, discounts, tax, and total amount. Output is available as Excel, CSV, or JSON."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What receipt formats does FormX support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FormX processes receipts in PDF, JPG, and PNG — including phone photographs of paper receipts, thermal receipt scans, and digital receipts exported as PDFs. It is template-free and handles varying formats across retailers, restaurants, and any merchant type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert a receipt image to text or JSON?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Upload a receipt image (JPG or PNG) and FormX extracts all text and data fields, returning structured output as JSON, Excel, or CSV. The JSON response includes merchant name, date, line items, tax, and total — ready for direct use in any downstream system or API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does FormX support non-English receipts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. FormX processes receipts in 50+ languages including Chinese (Simplified and Traditional), Japanese, Korean, Arabic, Thai, Bahasa Indonesia, Bahasa Malaysia, Vietnamese, and all major European languages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use FormX for shopping mall loyalty point validation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. FormX is used by shopping mall operators and loyalty programme managers to validate customer receipts and award points automatically. Major malls process 10,000+ receipts daily during peak seasons — FormX handles this at scale via REST API, reducing processing costs by 70%, increasing volume 5x with the same team, and achieving 95% data accuracy. Built-in fraud detection and duplicate prevention included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I integrate receipt data with QuickBooks or Xero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. FormX connects natively with QuickBooks Online and Xero. Extracted receipt data can be pushed directly into your accounting platform via REST API, Zapier, or n8n."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the receipt scanner free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the web tool is free with no signup required for single receipt extraction. Batch processing and API access require a free trial account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is receipt data safe when processed by FormX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FormX is ISO 27001 and SOC 2 Type II certified. All uploaded documents are encrypted in transit and at rest. Documents are not retained after extraction."
+      }
+    }
+  ]
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Extract Data from a Receipt Using OCR",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": "1",
+      "name": "Upload Receipt",
+      "text": "Upload a receipt image (JPG, PNG) or PDF. Works on any receipt type including shopping mall, restaurant, medical, and business receipts in any language."
+    },
+    {
+      "@type": "HowToStep",
+      "position": "2",
+      "name": "OCR Analysis",
+      "text": "FormX AI analyses the image, identifies all text and data fields, and extracts merchant name, date, line items, tax, and total amount automatically."
+    },
+    {
+      "@type": "HowToStep",
+      "position": "3",
+      "name": "Export Structured Data",
+      "text": "Download extracted receipt data as Excel, CSV, or JSON. For batch processing or direct integration with QuickBooks, Xero, or any platform, use the FormX REST API."
+    }
+  ]
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FormX.ai",
+  "url": "https://formx.ai",
+  "description": "AI-powered document processing platform specialising in receipt OCR, invoice extraction, and intelligent document processing via REST API.",
+  "sameAs": [
+    "https://www.linkedin.com/company/formx-ai"
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "SkyMakers Digital Group"
+  }
+};
 ---
 
 <PageLayout
-  title="Shopping Mall Receipt Converter"
-  description="Free OCR receipt scanner. Extract merchant name, date, items, and totals from any receipt image. Used for expense reporting, bookkeeping, and data automation."
+  title="OCR Receipt Scanner — Free Online Receipt Data Extraction | FormX.ai"
+  description="Free OCR receipt scanner — extract merchant name, items, totals, and dates from any receipt. Works on shopping mall, restaurant, medical, and business receipts in 50+ languages. Export to Excel, CSV, or JSON. No signup required."
   canonicalUrl="https://www.formx.ai/tools/shopping-mall-receipt-converter/"
 >
+  <Fragment slot="head">
+    <JsonLd schema={softwareAppSchema} />
+    <JsonLd schema={faqSchema} />
+    <JsonLd schema={howToSchema} />
+    <JsonLd schema={orgSchema} />
+  </Fragment>
+
   <section class="title-2 bg-f7f8fc">
     <div class="w-layout-blockcontainer pagetitle__container mt-60 w-container">
-      <h1 class="pricing-title mb-0">
-        <span class="heading-gradient">Effortlessly Extract Data from Receipts with&#x2028;<br />&#x200d;</span>Our Free OCR Receipt Scanner
-      </h1>
-      <p class="section__header__content mb-40">Try our free OCR receipt scanner (test converter) and see how FormX.ai&#x2028;can turn your receipts into usable data!</p>
+      <h1 class="pricing-title mb-0">Free OCR Receipt Scanner</h1>
+      <p class="section__header__content mb-40">Upload any receipt image and FormX AI extracts merchant name, date, line items, and totals as structured data — instantly. Convert receipt image to text, JSON, Excel, or CSV. Works on shopping mall receipts for loyalty point validation, business expense receipts, and any receipt type in 50+ languages. No signup required.</p>
       <div class="w-embed w-iframe">
         <iframe src="https://widgets.formx.ai/shopping-mall-receipt/" style="width: 100%; height: 600px" frameBorder="0"></iframe>
       </div>
@@ -26,7 +159,7 @@ import FAQSection from '@/components/sections/FAQSection.astro';
         <div class="product-2-block-text-wrapper">
           <img src="/images/pages/converter_privacy.svg" loading="lazy" alt="" />
           <h2 class="product-2-block-heading">Your Data.<br />Your Privacy.<br />Our Promise.</h2>
-          <div class="product-2-block-paragraph">We prioritize user privacy and delete your data after processing your Shopping Mall Receipt with OCR.</div>
+          <div class="product-2-block-paragraph">FormX does not store or share your receipt data unless explicitly requested.</div>
         </div>
         <div class="product-2-block-image-wrapper">
           <img
@@ -85,55 +218,99 @@ import FAQSection from '@/components/sections/FAQSection.astro';
     </div>
   </div>
 
-  <div class="section bg-f7f8fc">
-    <div class="container-default heading-content w-container">
-      <div class="product-heading-wrapper mx-auto mb-60 max-width-800">
-        <h2 class="product-heading">When Do You Need OCR Receipt Scanning?</h2>
-        <div class="product-subheading">OCR receipt scanning can be a valuable tool in various scenarios, including:</div>
-      </div>
-      <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="_2-block-flex tabs-with-image w-tabs">
-        <div class="hover-change tabs w-tab-menu">
-          <a data-w-tab="Tab 1" class="hover-change-content w-inline-block w-tab-link w--current">
-            <div class="hover-change-title">Personal finance management</div>
-            <div class="hover-change-description">Track your expenses and income by automatically extracting&#x2028;data from receipts.</div>
-          </a>
-          <a data-w-tab="Tab 2" class="hover-change-content w-inline-block w-tab-link">
-            <div class="hover-change-title">Accounting and bookkeeping</div>
-            <div class="hover-change-description">Simplify the process of recording transactions by importing&#x2028;data directly from receipts.</div>
-          </a>
-          <a data-w-tab="Tab 3" class="hover-change-content w-inline-block w-tab-link">
-            <div class="hover-change-title">Business expense reporting</div>
-            <div class="hover-change-description">Easily submit expense reports to your employer by scanning&#x2028;and extracting relevant information from receipts.</div>
-          </a>
-          <a data-w-tab="Tab 4" class="hover-change-content w-inline-block w-tab-link">
-            <div class="hover-change-title">Research and analysis</div>
-            <div class="hover-change-description">Analyze spending patterns and trends by extracting&#x2028;data from a large number of receipts.</div>
-          </a>
-          <a data-w-tab="Tab 5" class="hover-change-content w-inline-block w-tab-link">
-            <div class="hover-change-title">Data entry automation</div>
-            <div class="hover-change-description">Reduce manual data entry tasks and improve efficiency by&#x2028;automating the process of extracting information from receipts.</div>
-          </a>
+  <div class="section product-section bg-f7f8fc">
+    <div class="container-default w-container">
+      <div class="product-heading-content-wrapper">
+        <div class="product-heading-wrapper mw-800px">
+          <h2 class="product-heading">Receipt OCR in Any Language</h2>
+          <div class="product-subheading">Most OCR tools struggle with non-Latin scripts. FormX processes receipts in 50+ languages — including Chinese (Simplified and Traditional), Japanese, Korean, Arabic, Thai, Bahasa Indonesia, Bahasa Malaysia, Vietnamese, and all major European languages.</div>
+          <div class="product-subheading" style="margin-top:16px">This makes FormX the preferred choice for multinational retailers, loyalty programme operators, and businesses handling receipts from across Asia, the Middle East, and beyond.</div>
         </div>
-        <div class="_2-block-flex-image tabs w-tab-content">
-          <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
-            <img width="600" sizes="(max-width: 767px) 100vw, 600px" alt="" src="/images/pages/converter_shopping_when-personal@2x.webp" loading="eager" srcset="/images/pages/converter_shopping_when-personal@2x-p-500.webp 500w, /images/pages/converter_shopping_when-personal@2x-p-800.webp 800w, /images/pages/converter_shopping_when-personal@2x-p-1080.webp 1080w, /images/pages/converter_shopping_when-personal@2x.webp 1200w" class="_2-block-image-radius" />
-          </div>
-          <div data-w-tab="Tab 2" class="w-tab-pane">
-            <img width="600" sizes="100vw" alt="" src="/images/pages/converter_shopping_when-accounting@2x.webp" loading="eager" srcset="/images/pages/converter_shopping_when-accounting@2x-p-500.webp 500w, /images/pages/converter_shopping_when-accounting@2x-p-800.webp 800w, /images/pages/converter_shopping_when-accounting@2x-p-1080.webp 1080w, /images/pages/converter_shopping_when-accounting@2x.webp 1200w" class="_2-block-image-radius" />
-          </div>
-          <div data-w-tab="Tab 3" class="w-tab-pane">
-            <img sizes="100vw" srcset="/images/pages/converter_shopping_when-reporting@2x-p-500.webp 500w, /images/pages/converter_shopping_when-reporting@2x-p-800.webp 800w, /images/pages/converter_shopping_when-reporting@2x-p-1080.webp 1080w, /images/pages/converter_shopping_when-reporting@2x.webp 1200w" alt="" src="/images/pages/converter_shopping_when-reporting@2x.webp" loading="eager" class="_2-block-image-radius" />
-          </div>
-          <div data-w-tab="Tab 4" class="w-tab-pane">
-            <img width="600" sizes="100vw" alt="" src="/images/pages/converter_shopping_when-analysis@2x.webp" loading="eager" srcset="/images/pages/converter_shopping_when-analysis@2x-p-500.webp 500w, /images/pages/converter_shopping_when-analysis@2x-p-800.webp 800w, /images/pages/converter_shopping_when-analysis@2x-p-1080.webp 1080w, /images/pages/converter_shopping_when-analysis@2x.webp 1200w" class="_2-block-image-radius" />
-          </div>
-          <div data-w-tab="Tab 5" class="w-tab-pane">
-            <img width="600" sizes="100vw" alt="" src="/images/pages/converter_shopping_when-data@2x.webp" loading="eager" srcset="/images/pages/converter_shopping_when-data@2x-p-500.webp 500w, /images/pages/converter_shopping_when-data@2x-p-800.webp 800w, /images/pages/converter_shopping_when-data@2x-p-1080.webp 1080w, /images/pages/converter_shopping_when-data@2x.webp 1200w" class="_2-block-image-radius" />
+        <div class="product-content-wrapper">
+          <div class="_3-block-grid">
+            <StatCard number="50+" label="Languages supported" />
+            <StatCard number="Any" label="Receipt format — no templates required" />
+            <StatCard number="Real-time" label="Processing — results in seconds" />
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <FeatureGrid
+    bgClass=""
+    heading="When Do You Need OCR Receipt Scanning?"
+    subheading="OCR receipt scanning can be a valuable tool in various scenarios, including:"
+    columns={3}
+    cards={[
+      {
+        title: 'Shopping mall loyalty point validation',
+        description: 'Major malls process 10,000+ receipts daily during peak seasons. Manual verification takes 2–3 minutes per receipt, causes 24–48 hour delays in point allocation, and results in 20% error rates from data entry mistakes. FormX replaces manual concierge desk processing with instant AI receipt scanning — extracting merchant name, purchase date, line items, and total amount for automatic point calculation, fraud detection, and duplicate prevention. 95% reduction in desk queries.',
+      },
+      {
+        title: 'Parking privilege automation',
+        description: 'FormX validates customer receipts instantly to determine parking eligibility — replacing error-prone manual checks with AI that processes any receipt format from any merchant. Mobile self-service redemption means customers no longer queue at concierge desks.',
+      },
+      {
+        title: 'Business expense reporting',
+        description: 'Finance teams and employees use FormX to extract structured data from receipts for expense reports. Output feeds directly into QuickBooks, Xero, or any expense management platform via REST API or Zapier.',
+      },
+      {
+        title: 'Non-English and multi-language receipts',
+        description: 'FormX processes receipts in 50+ languages including Chinese, Japanese, Arabic, Thai, Bahasa, and more — making it the preferred receipt OCR solution for businesses operating across Asia, the Middle East, and globally.',
+      },
+      {
+        title: 'Receipt data extraction at scale',
+        description: 'Process thousands of receipts automatically via REST API. Used by retail chains, loyalty programme operators, and financial services teams for high-volume receipt scanning software workflows.',
+      },
+    ]}
+  />
+
+  <div class="section product-section bg-f7f8fc">
+    <div class="container-default w-container">
+      <div class="product-heading-content-wrapper">
+        <div class="product-heading-wrapper">
+          <h2 class="product-heading">FormX Receipt OCR — Results That Scale</h2>
+        </div>
+        <div class="product-content-wrapper">
+          <div class="_3-block-grid">
+            <StatCard number="70%" label="Processing cost reduction" />
+            <StatCard number="5x" label="Processing volume — same team size" />
+            <StatCard number="95%" label="High data accuracy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <FeatureGrid
+    bgClass=""
+    heading="Connect Receipt Data to Your Systems"
+    subheading="FormX integrates directly with your backend systems via REST API — and connects to accounting and workflow platforms for business users."
+    columns={3}
+    cards={[
+      {
+        title: 'REST API',
+        description: 'Full REST API for direct integration with your loyalty programme backend, point allocation system, or retail management platform. Process 10,000+ receipts daily. SDKs available for Python, Node.js, Java, and .NET.',
+      },
+      {
+        title: 'Mobile & Self-Service',
+        description: 'Customers scan receipts instantly via mobile app or web. FormX validates the receipt, extracts line items, detects duplicates, and returns structured data to your loyalty system in real time.',
+      },
+      {
+        title: 'QuickBooks Online',
+        description: 'Push structured receipt data directly into QuickBooks Online. Automate expense entry and eliminate manual data input for your accounting team.',
+      },
+      {
+        title: 'Xero',
+        description: 'Connect receipt extraction to Xero natively. Line items, tax amounts, and totals are imported automatically — ready for reconciliation.',
+      },
+      {
+        title: 'Zapier & n8n',
+        description: 'Trigger receipt extraction workflows automatically. Connect FormX to thousands of apps via Zapier or n8n without writing code.',
+      },
+    ]}
+  />
 
   <div class="section">
     <div class="container-default w-container">
@@ -180,11 +357,23 @@ import FAQSection from '@/components/sections/FAQSection.astro';
       },
       {
         question: "What receipt formats does FormX support?",
-        answer: `FormX processes receipts in PDF, JPG, and PNG — including phone photographs of paper receipts, thermal receipt scans, and digital receipts exported as PDFs. It is template-free and handles varying formats across retailers. <a href="/schedule-demo/">Contact us</a> to test your format.<br />`,
+        answer: `FormX processes receipts in PDF, JPG, and PNG — including phone photographs of paper receipts, thermal receipt scans, and digital receipts exported as PDFs. It is template-free and handles varying formats across retailers, restaurants, and any merchant type. <a href="/schedule-demo/">Contact us</a> to test your format.<br />`,
       },
       {
-        question: "Can I use FormX for expense reporting automation?",
-        answer: `Yes. FormX extracts structured data from receipts and returns it as JSON or Excel, which can be fed directly into expense management platforms, accounting software like QuickBooks or Xero, or custom workflows via REST API, Zapier, or n8n. <a href="/schedule-demo/">Schedule a demo</a> to discuss your use case.<br />`,
+        question: "Can I convert a receipt image to text or JSON?",
+        answer: `Yes. Upload a receipt image (JPG or PNG) and FormX extracts all text and data fields, returning structured output as JSON, Excel, or CSV. The JSON response includes merchant name, date, line items, tax, and total — ready for direct use in any downstream system or API.<br />`,
+      },
+      {
+        question: "Does FormX support non-English receipts?",
+        answer: `Yes. FormX processes receipts in 50+ languages including Chinese (Simplified and Traditional), Japanese, Korean, Arabic, Thai, Bahasa Indonesia, Bahasa Malaysia, Vietnamese, and all major European languages. This makes it suitable for multinational businesses and loyalty programmes operating across Asia and globally.<br />`,
+      },
+      {
+        question: "Can I use FormX for shopping mall loyalty point validation?",
+        answer: `Yes. FormX is used by shopping mall operators and loyalty programme managers to validate customer receipts and award points automatically. Major malls process 10,000+ receipts daily during peak seasons — FormX handles this at scale via REST API, reducing processing costs by 70%, increasing processing volume 5x with the same team, and achieving 95% data accuracy. The API extracts merchant name, purchase date, line items, and total amount from any receipt format with built-in fraud detection and duplicate prevention. Results in 95% reduction in concierge desk queries. <a href="/schedule-demo/">Contact us</a> to discuss your loyalty programme.<br />`,
+      },
+      {
+        question: "Can I integrate receipt data with QuickBooks or Xero?",
+        answer: `Yes. FormX connects natively with QuickBooks Online and Xero. Extracted receipt data — including line items, tax amounts, and totals — can be pushed directly into your accounting platform via REST API, Zapier, or n8n. <a href="/schedule-demo/">Contact us</a> for integration guides.<br />`,
       },
       {
         question: "Is the receipt scanner free to use?",
