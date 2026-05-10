@@ -15,6 +15,7 @@ interface HeroImage {
 
 interface Props {
   tag?: string;
+  tagClass?: string;
   heading: string;
   subheading?: string;
   ctaPrimary?: CtaButton;
@@ -29,6 +30,7 @@ interface Props {
 
 const {
   tag,
+  tagClass = 'product-hero-title paragraph-small',
   heading,
   subheading,
   ctaPrimary,
@@ -47,7 +49,7 @@ const {
     <div class="product-hero-wrapper min-w-0">
       <div class="hero-content-block">
         <div class="product-hero-content-wrapper">
-          {tag && <div class="hero-title-tag">{tag}</div>}
+          {tag && <div class={tagClass}>{tag}</div>}
           <h1 class={headingClass}>{heading}</h1>
           {subheading && <div class={subheadingClass}>{subheading}</div>}
           {(ctaPrimary || ctaSecondary) && (
