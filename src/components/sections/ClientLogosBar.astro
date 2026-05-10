@@ -1,0 +1,46 @@
+---
+interface Logo {
+  src: string;
+  alt: string;
+  width?: number;
+}
+
+interface Props {
+  heading?: string;
+  bgClass?: string;
+  logos: Logo[];
+}
+
+const DEFAULT_LOGOS: Logo[] = [
+  { src: '/images/tools/logos/logo-google.webp',    alt: 'Google',    width: 111 },
+  { src: '/images/tools/logos/logo-wp.webp',        alt: 'WordPress', width: 111 },
+  { src: '/images/tools/logos/logo-zapier.webp',    alt: 'Zapier',    width: 111 },
+  { src: '/images/tools/logos/logo-link-reit.webp', alt: 'LINK REIT', width: 111 },
+  { src: '/images/tools/logos/logo-eds.webp',       alt: 'EDS',       width: 111 },
+  { src: '/images/tools/logos/logo-lks.webp',       alt: 'LKS',       width: 111 },
+];
+
+const {
+  heading = 'TRUSTED BY INTERNATIONAL COMPANIES',
+  bgClass = '',
+  logos = DEFAULT_LOGOS,
+} = Astro.props;
+---
+
+<div class={`section product-section ${bgClass}`.trim()}>
+  <div class="container-default w-container min-w-0 max-w-full" style="text-align:center">
+    <div class="paragraph-small" style="color:var(--typography-secondary);letter-spacing:0.08em;font-weight:500;margin-bottom:24px">{heading}</div>
+    <div class="w-layout-hflex" style="flex-wrap:wrap;justify-content:center;align-items:center;gap:32px 48px">
+      {logos.map((logo) => (
+        <img
+          src={logo.src}
+          loading="lazy"
+          width={logo.width ?? 111}
+          alt={logo.alt}
+          class="img-fluid"
+          style="max-height:48px;object-fit:contain"
+        />
+      ))}
+    </div>
+  </div>
+</div>

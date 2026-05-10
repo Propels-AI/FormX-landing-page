@@ -1,0 +1,8 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="70" height="70" rx="24" fill="#3B82F6" fill-opacity="0.1"/>
+<!-- House -->
+<path d="M35 18L18 31H22V52H32V41H38V52H48V31H52L35 18Z" fill="#3B82F6" fill-opacity="0.3"/>
+<path d="M35 20L20 32.5H23V51H31V40H39V51H47V32.5H50L35 20Z" fill="#3B82F6"/>
+<!-- Dollar sign on house -->
+<text x="35" y="45" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="Arial">$</text>
+</svg>

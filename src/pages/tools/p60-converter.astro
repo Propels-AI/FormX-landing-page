@@ -3,6 +3,10 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import CTACard from '@/components/sections/CTACard.astro';
 import FAQSection from '@/components/sections/FAQSection.astro';
 import StatCard from '@/components/sections/StatCard.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import FeatureGrid from '@/components/sections/FeatureGrid.astro';
+import ApiResponseExample from '@/components/sections/ApiResponseExample.astro';
+import ClientLogosBar from '@/components/sections/ClientLogosBar.astro';
 ---
 
 <PageLayout
@@ -14,15 +18,98 @@ import StatCard from '@/components/sections/StatCard.astro';
   <section class="title-2 bg-f7f8fc">
     <div class="w-layout-blockcontainer pagetitle__container w-container">
       <h1 class="pricing-title"><span class="heading-gradient">P60 Converter<br/>‍</span>P60 Extraction API and OCR SDK — Pull Every Field Automatically</h1>
-      <p class="section__header__content">Use the FormX P60 extraction API or OCR SDK to read HMRC P60 forms instantly. Returns total pay, tax deducted, National Insurance contributions, NI category, statutory payments, and employer PAYE reference as structured JSON or CSV — no templates required.</p>
+      <p class="section__header__content"><span class="text-span-26">Use the FormX P60 extraction API or OCR SDK to read HMRC P60 forms instantly.</span> Returns total pay, tax deducted, National Insurance contributions, NI category, statutory payments, and employer PAYE reference as <span class="text-span-25">structured JSON or CSV</span> — no templates required.</p>
       <div class="w-embed w-iframe">
         <iframe src="https://widgets.formx.ai/p60-form/" style="width: 100%; height: 600px" frameBorder="0"></iframe>
       </div>
     </div>
   </section>
 
+  <div class="section product-section bg-f7f8fc">
+    <div class="container-default w-container min-w-0 max-w-full">
+      <div class="product-heading-content-wrapper">
+        <div class="product-heading-wrapper mw-800px">
+          <h2 class="product-heading">What does this P60 Converter do?</h2>
+          <div class="product-subheading">
+            This P60 converter reads UK HMRC Form P60 and automatically extracts and converts every field into structured data. No manual data entry required. FormX uses OCR and AI to return total pay, tax deducted, and National Insurance figures as Excel or JSON in seconds.
+          </div>
+          <div class="product-subheading" style="margin-top:16px">
+            Need P45, P11D, or P60(Sub) extraction too? FormX supports all HMRC payroll forms.
+          </div>
+          <a href="/schedule-demo/" class="inter-tight link-semibold text-highlight-green-20" style="margin-top:16px;display:inline-block">Get in touch →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <HowItWorks
+    tightPadding
+    heading="How the P60 Converter Works"
+    subheading="FormX P60 Converter reads your P60 and pulls out every field automatically — no typing, no spreadsheet setup, no manual cross-checking. Upload your form and get your data back in seconds, ready to download or share."
+    steps={[
+      {
+        icon: '/images/tools/icons/paper-upload.svg',
+        title: 'Upload',
+        description: 'Drop your P60 PDF, JPG, or PNG into the tool. Scanned copies, phone photos, and digital PDFs all work.',
+      },
+      {
+        icon: '/images/tools/icons/swap.svg',
+        title: 'Extraction',
+        description: 'FormX AI reads the form, identifies each field, and validates the values for consistency.',
+      },
+      {
+        icon: '/images/tools/icons/paper-download.svg',
+        title: 'Download',
+        description: 'Get your structured data as Excel or JSON — ready to import into your accounting software, mortgage application, or payroll system.',
+      },
+    ]}
+  />
+
+  <FeatureGrid
+    tightPadding
+    bgClass="bg-f7f8fc"
+    heading="Use Cases"
+    columns={3}
+    cards={[
+      {
+        icon: '/images/tools/icons/icon-freelancer.svg',
+        title: 'Mortgage & Remortgage Applicants',
+        description: 'Lenders require P60s as proof of income for mortgage applications. FormX lets applicants upload their P60 and extract key figures instantly — total pay and tax deducted — in the exact format brokers and lenders need.',
+      },
+      {
+        icon: '/images/tools/icons/icon-accounting.svg',
+        title: 'Accounting & Tax Firms',
+        description: 'Accountants preparing self-assessment tax returns receive P60s from clients every April. FormX converts P60 PDFs into structured data and feeds figures directly into tax preparation software.',
+      },
+      {
+        icon: '/images/tools/icons/icon-hr.svg',
+        title: 'HR & Payroll Teams',
+        description: 'HR teams verifying historical earnings or handling employee queries about previous tax years use FormX to extract P60 data from archived PDFs without manually reopening payroll records.',
+      },
+      {
+        icon: '/images/tools/icons/icon-gig-worker.svg',
+        title: 'Lettings & Rental Applications',
+        description: 'Letting agents and landlords request P60s as proof of income from prospective tenants. FormX integrates into referencing workflows to automatically extract and verify income figures at scale.',
+      },
+      {
+        icon: '/images/tools/icons/icon-banking.svg',
+        title: 'Financial Services & Banking',
+        description: "Banks and lenders use P60 data to verify income for personal loans, credit decisions, and account opening. FormX's API integrates directly into underwriting workflows to extract and validate P60 income data automatically.",
+      },
+    ]}
+  />
+
+  <ApiResponseExample
+    tightPadding
+    imageSrc="/images/tools/examples/p60-json-example.svg"
+    imageAlt="P60 API JSON response example"
+  />
+
+  <ClientLogosBar />
+
   <CTACard
     heading="Get started with FormX.ai"
+    bgClass="bg-f7f8fc"
     ctaPrimary={{ text: "Start Free Trial", href: "https://formextractorai.com/signup" }}
     ctaSecondary={{ text: "Speak with an Expert ->", href: "/schedule-demo" }}
   />
@@ -52,7 +139,7 @@ import StatCard from '@/components/sections/StatCard.astro';
       },
       {
         question: "Can FormX extract P60 data via API for batch processing?",
-        answer: `Yes. FormX provides a REST API that accepts P60 PDFs and returns structured JSON - making it a P60 extractor suitable for enterprise integration. The API connects with Sage, Xero, Workday, BambooHR, Microsoft Dynamics 365, Zapier, and N8N. API\u00a0documentation is available at <a href="https://help.formx.ai/reference/document-extraction">here</a>. You can also customise extracted fields through the FormX portal.<br />`,
+        answer: `Yes. FormX provides a REST API that accepts P60 PDFs and returns structured JSON - making it a P60 extractor suitable for enterprise integration. The API connects with Sage, Xero, Workday, BambooHR, Microsoft Dynamics 365, Zapier, and N8N. API documentation is available at <a href="https://help.formx.ai/reference/document-extraction">here</a>. You can also customise extracted fields through the FormX portal.<br />`,
       },
       {
         question: "What is the difference between a P60 and a P45?",
@@ -84,7 +171,7 @@ import StatCard from '@/components/sections/StatCard.astro';
   <div class="section product-section bg-f7f8fc">
     <div class="container-default w-container">
       <div class="product-heading-content-wrapper">
-        <div class="product-heading-wrapper">
+        <div class="product-heading-wrapper mw-800px">
           <h2 class="product-heading">Extract P60 Data Automatically with FormX</h2>
         </div>
         <div class="product-content-wrapper">

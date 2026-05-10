@@ -1,0 +1,62 @@
+<svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <filter id="shadow" x="0" y="0" width="380" height="380" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0.0156863 0 0 0 0 0.360784 0 0 0 0 0.298039 0 0 0 0.16 0" result="hardAlpha"/>
+    <feOffset dy="2"/>
+    <feGaussianBlur stdDeviation="10"/>
+    <feComposite in2="hardAlpha" operator="out"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.0156863 0 0 0 0 0.360784 0 0 0 0 0.298039 0 0 0 0.16 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+  </filter>
+</defs>
+<g filter="url(#shadow)">
+  <rect x="20" y="18" width="340" height="340" rx="8" fill="white"/>
+  <rect x="20" y="18" width="340" height="340" rx="8" stroke="#E6E6E6"/>
+</g>
+
+<text font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#5A5E66">
+
+  <tspan x="44" dy="0" y="58">{</tspan>
+
+  <!-- tax_year -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"tax_year"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#16A34A">"2023-2024"</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- form_type -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"form_type"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#16A34A">"P60"</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- employer_name -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"employer_name"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#16A34A">"Acme Ltd"</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- employer_paye_ref -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"employer_paye_ref"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#16A34A">"123/AB45678"</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- employee_name -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"employee_name"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#16A34A">"Jane Smith"</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- employee_ni_number -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"employee_ni_number"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#16A34A">"**-**-**-**"</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- total_pay -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"total_pay"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#D97706">42500.00</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- total_tax_deducted -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"total_tax_deducted"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#D97706">7900.00</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- ni_contributions_employee -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"ni_contributions_employee"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#D97706">2880.00</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- ni_contributions_employer -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"ni_contributions_employer"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#D97706">4512.00</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- ni_category -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"ni_category"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#16A34A">"A"</tspan><tspan fill="#5A5E66">,</tspan></tspan>
+
+  <!-- student_loan_deductions -->
+  <tspan x="44" dy="18">  <tspan fill="#2563EB">"student_loan_deductions"</tspan><tspan fill="#5A5E66">: </tspan><tspan fill="#D97706">450.00</tspan></tspan>
+
+  <tspan x="44" dy="18">}</tspan>
+
+</text>
+</svg>

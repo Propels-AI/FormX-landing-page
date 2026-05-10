@@ -1,0 +1,14 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="70" height="70" rx="24" fill="#0EA5E9" fill-opacity="0.1"/>
+<!-- Bank building base -->
+<rect x="18" y="42" width="34" height="5" rx="1.5" fill="#0EA5E9"/>
+<rect x="15" y="49" width="40" height="4" rx="1.5" fill="#0EA5E9"/>
+<!-- Roof / pediment -->
+<path d="M35 17L54 30H16L35 17Z" fill="#0EA5E9"/>
+<rect x="18" y="28" width="34" height="3" rx="1" fill="#0EA5E9" fill-opacity="0.4"/>
+<!-- Columns -->
+<rect x="21" y="31" width="4" height="11" rx="1" fill="#0EA5E9" fill-opacity="0.6"/>
+<rect x="29" y="31" width="4" height="11" rx="1" fill="#0EA5E9" fill-opacity="0.6"/>
+<rect x="37" y="31" width="4" height="11" rx="1" fill="#0EA5E9" fill-opacity="0.6"/>
+<rect x="45" y="31" width="4" height="11" rx="1" fill="#0EA5E9" fill-opacity="0.6"/>
+</svg>

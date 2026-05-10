@@ -1,0 +1,52 @@
+---
+interface Props {
+  heading?: string;
+  imageSrc: string;
+  imageAlt?: string;
+  docsHref?: string;
+  docsLinkText?: string;
+  bgClass?: string;
+  tightPadding?: boolean;
+}
+
+const {
+  heading = 'Example API Response',
+  imageSrc,
+  imageAlt = 'API response JSON example',
+  docsHref = 'https://help.formx.ai/reference/document-extraction',
+  docsLinkText = 'Full API Documentation →',
+  bgClass = 'bg-f7f8fc',
+  tightPadding = false,
+} = Astro.props;
+
+const sectionClass = tightPadding ? 'section advantage-section' : 'section product-section';
+---
+
+<div class={`${sectionClass} ${bgClass}`.trim()}>
+  <div class="container-default w-container min-w-0 max-w-full">
+    <div class="_2-block-flex footer-form">
+      <div class="footer-left">
+        <h2 class="footer-heading">{heading}</h2>
+        {docsHref && (
+          <a
+            href={docsHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button-primary button-left button-gradient mobile-full w-button"
+            style="text-decoration:none"
+          >
+            {docsLinkText}
+          </a>
+        )}
+      </div>
+      <img
+        src={imageSrc}
+        loading="lazy"
+        width="380"
+        alt={imageAlt}
+        class="img-fluid"
+        style="max-width:100%"
+      />
+    </div>
+  </div>
+</div>

@@ -3,6 +3,10 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import CTACard from '@/components/sections/CTACard.astro';
 import FAQSection from '@/components/sections/FAQSection.astro';
 import StatCard from '@/components/sections/StatCard.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import FeatureGrid from '@/components/sections/FeatureGrid.astro';
+import ApiResponseExample from '@/components/sections/ApiResponseExample.astro';
+import ClientLogosBar from '@/components/sections/ClientLogosBar.astro';
 ---
 
 <PageLayout
@@ -14,12 +18,107 @@ import StatCard from '@/components/sections/StatCard.astro';
   <section class="title-2 bg-f7f8fc">
     <div class="w-layout-blockcontainer pagetitle__container w-container">
       <h1 class="pricing-title"><span class="heading-gradient">1099 Extractor<br/>‍</span>Pull Every Field from Any 1099</h1>
-      <p class="section__header__content">Upload a form 1099-NEC PDF or image. FormX reads every box - payer details, income amounts, federal and state tax withholding - and returns structured data instantly.</p>
+      <p class="section__header__content"><span class="text-span-26">Upload a form 1099-NEC PDF or image.</span> FormX reads every box - payer details, income amounts, federal and state tax withholding - and returns <span class="text-span-25">structured data</span> instantly.</p>
       <div class="w-embed w-iframe">
         <iframe src="https://widgets.formx.ai/form1099-nec/" style="width: 100%; height: 600px" frameBorder="0"></iframe>
       </div>
     </div>
   </section>
+
+  <div class="section product-section bg-f7f8fc">
+    <div class="container-default w-container min-w-0 max-w-full">
+      <div class="product-heading-content-wrapper">
+        <div class="product-heading-wrapper mw-800px">
+          <h2 class="product-heading">What does this Form 1099 Extractor do?</h2>
+          <div class="product-subheading">
+            This form 1099 extractor reads IRS Form 1099-NEC and converts every field into structured data — automatically. No manual transcription. FormX uses OCR and AI to return payer details, compensation amounts, and withholdings as Excel or JSON in seconds. Supports 1099-NEC, 1099-MISC, and 1099-K variants.
+          </div>
+          <a href="/schedule-demo/" class="inter-tight link-semibold text-highlight-green-20" style="margin-top:16px;display:inline-block">Schedule a demo →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <HowItWorks
+    tightPadding
+    heading="How the 1099 Extractor Works"
+    steps={[
+      {
+        icon: '/images/tools/icons/paper-upload.svg',
+        title: 'Upload',
+        description: 'Drop your 1099-NEC PDF, JPG, or PNG into the tool. Scanned copies, phone photos, and digital PDFs all work.',
+      },
+      {
+        icon: '/images/tools/icons/swap.svg',
+        title: 'Extraction',
+        description: 'FormX AI reads the form, identifies each box field, and validates the values for consistency.',
+      },
+      {
+        icon: '/images/tools/icons/paper-download.svg',
+        title: 'Download',
+        description: 'Get your structured data as Excel or JSON — ready to import into your tax software, accounting system, or spreadsheet.',
+      },
+    ]}
+  />
+
+  <FeatureGrid
+    tightPadding
+    bgClass="bg-f7f8fc"
+    heading="Use Cases"
+    columns={3}
+    cards={[
+      {
+        icon: '/images/tools/icons/icon-freelancer.svg',
+        title: 'Freelancers & Self-Employed',
+        description: 'Freelancers receiving multiple 1099-NECs from different clients use FormX to extract and consolidate their income data quickly at tax time.',
+      },
+      {
+        icon: '/images/tools/icons/icon-accounting.svg',
+        title: 'Accounting & Tax Firms',
+        description: 'Tax preparers receive 1099s from dozens of clients every January. FormX lets them batch-process 1099 PDFs and feed figures directly into tax preparation software.',
+      },
+      {
+        icon: '/images/tools/icons/icon-hr.svg',
+        title: 'HR & Payroll Teams',
+        description: "Platforms that issue 1099s to contractors at scale use FormX's API to verify and reconcile payment data without manual cross-checking.",
+      },
+      {
+        icon: '/images/tools/icons/icon-gig-worker.svg',
+        title: 'Gig Workers & Platform Earners',
+        description: 'Uber drivers, Airbnb hosts, Etsy sellers, and Fiverr freelancers receiving 1099-NECs use FormX to extract and organise their income data for tax filing.',
+      },
+      {
+        icon: '/images/tools/icons/icon-banking.svg',
+        title: 'Financial Services & Banking',
+        description: 'Banks and lenders require 1099 income verification for loan applications and credit decisions. FormX integrates directly into underwriting workflows.',
+      },
+    ]}
+  />
+
+  <div class="section product-section bg-f7f8fc">
+    <div class="container-default w-container min-w-0 max-w-full">
+      <div class="product-heading-content-wrapper">
+        <div class="product-heading-wrapper mw-800px">
+          <h2 class="product-heading">1099 vs W-2 — What's the Difference?</h2>
+          <div class="product-subheading">
+            If you're comparing contractor (1099) income to employee (W-2) income, the key difference is tax responsibility. As a 1099 contractor, you pay self-employment tax (15.3%) on top of income tax whereas a W-2 employee splits this with their employer. A rough rule of thumb: multiply your desired W-2 salary by 1.25–1.4 to find an equivalent 1099 rate that covers your additional tax burden and lack of benefits.
+          </div>
+          <div class="product-subheading" style="margin-top:16px">
+            FormX extracts data from both 1099 and W-2 forms. If you need to compare income figures across both document types, upload each to FormX and get structured data for both in seconds.
+          </div>
+          <a href="/tools/w2-extractor/" class="inter-tight link-semibold text-highlight-green-20" style="margin-top:16px;display:inline-block">Need to extract W-2 forms? Try it out here →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ApiResponseExample
+    tightPadding
+    imageSrc="/images/tools/examples/1099-json-example.svg"
+    imageAlt="1099 API JSON response example"
+  />
+
+  <ClientLogosBar />
 
   <CTACard
     heading="Get started with FormX.ai"
@@ -52,7 +151,7 @@ import StatCard from '@/components/sections/StatCard.astro';
       },
       {
         question: "Can FormX extract 1099 data via API for batch processing?",
-        answer: `Yes. FormX provides a REST API that accepts 1099 PDFs and images, returning structured JSON or Excel. API\u00a0documentation is available at <a href="https://help.formx.ai/reference/document-extraction">here</a>. You can also customise extracted fields through the FormX portal.<br />`,
+        answer: `Yes. FormX provides a REST API that accepts 1099 PDFs and images, returning structured JSON or Excel. API documentation is available at <a href="https://help.formx.ai/reference/document-extraction">here</a>. You can also customise extracted fields through the FormX portal.<br />`,
       },
       {
         question: "What is the difference between a 1099 and a W-2, and can FormX extract both?",

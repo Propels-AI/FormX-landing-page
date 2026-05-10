@@ -3,6 +3,8 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import CTACard from '@/components/sections/CTACard.astro';
 import FAQSection from '@/components/sections/FAQSection.astro';
 import StatCard from '@/components/sections/StatCard.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import ClientLogosBar from '@/components/sections/ClientLogosBar.astro';
 ---
 
 <PageLayout
@@ -14,12 +16,36 @@ import StatCard from '@/components/sections/StatCard.astro';
   <section class="title-2 bg-f7f8fc">
     <div class="w-layout-blockcontainer pagetitle__container w-container">
       <h1 class="pricing-title">PDF to JSON Converter</h1>
-      <p class="section__header__content">Professional tool to convert PDF to JSON for free online and extract structured data accurately. No manual templates or setup required, powered by AI</p>
+      <p class="section__header__content">Professional tool to <span class="text-span-26">convert PDF to JSON</span> for free online and extract structured data accurately. <span class="text-span-25">No manual templates or setup required</span>, powered by AI</p>
       <div class="w-embed w-iframe">
         <iframe src="https://widgets.formx.ai/ocr-json" style="width: 100%; height: 600px" frameBorder="0"></iframe>
       </div>
     </div>
   </section>
+
+  <HowItWorks
+    tightPadding
+    heading="How to Convert Your PDF Files Into JSON?"
+    steps={[
+      {
+        icon: '/images/tools/icons/paper-upload.svg',
+        title: 'Upload PDF Files',
+        description: 'Upload your PDF — invoices, bank statements, reports, or any structured document. Digital and scanned PDFs both work.',
+      },
+      {
+        icon: '/images/tools/icons/swap.svg',
+        title: 'Convert to JSON',
+        description: 'FormX reads the document, understands the data structure, and returns a clean nested JSON object — no templates required.',
+      },
+      {
+        icon: '/images/tools/icons/paper-download.svg',
+        title: 'Download JSON File',
+        description: 'Download your structured JSON file, ready to consume via API, import into a web application, or feed into your data pipeline.',
+      },
+    ]}
+  />
+
+  <ClientLogosBar />
 
   <CTACard
     heading="Get started with FormX.ai"

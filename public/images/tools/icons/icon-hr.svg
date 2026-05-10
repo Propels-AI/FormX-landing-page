@@ -1,0 +1,13 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="70" height="70" rx="24" fill="#10B981" fill-opacity="0.1"/>
+<!-- People group -->
+<!-- Person 1 (centre) -->
+<circle cx="35" cy="24" r="7" fill="#10B981"/>
+<path d="M22 50C22 42.268 27.82 36 35 36C42.18 36 48 42.268 48 50" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+<!-- Person 2 (left) -->
+<circle cx="20" cy="27" r="5.5" fill="#10B981" fill-opacity="0.5"/>
+<path d="M10 50C10 44.477 14.477 40 20 40" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.5"/>
+<!-- Person 3 (right) -->
+<circle cx="50" cy="27" r="5.5" fill="#10B981" fill-opacity="0.5"/>
+<path d="M60 50C60 44.477 55.523 40 50 40" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.5"/>
+</svg>

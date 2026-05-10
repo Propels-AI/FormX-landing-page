@@ -3,6 +3,8 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import CTACard from '@/components/sections/CTACard.astro';
 import FAQSection from '@/components/sections/FAQSection.astro';
 import StatCard from '@/components/sections/StatCard.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import ClientLogosBar from '@/components/sections/ClientLogosBar.astro';
 ---
 
 <PageLayout
@@ -14,12 +16,50 @@ import StatCard from '@/components/sections/StatCard.astro';
   <section class="title-2 bg-f7f8fc">
     <div class="w-layout-blockcontainer pagetitle__container w-container">
       <h1 class="pricing-title"><span class="heading-gradient">AI Document Splitter<br/></span>Intelligently Split and Classify Your Documents</h1>
-      <p class="section__header__content">Upload a multi-document PDF and AI identifies where each document starts and ends - splitting and naming them automatically.</p>
+      <p class="section__header__content"><span class="text-span-26">Upload a multi-document PDF</span> and AI identifies where each document starts and ends - <span class="text-span-25">splitting and naming them automatically</span>.</p>
       <div class="w-embed w-iframe">
         <iframe src="https://widgets.formx.ai/split-classify/" style="width: 100%; height: 600px" frameBorder="0"></iframe>
       </div>
     </div>
   </section>
+
+  <div class="section product-section bg-f7f8fc">
+    <div class="container-default w-container min-w-0 max-w-full">
+      <div class="product-heading-content-wrapper">
+        <div class="product-heading-wrapper mw-800px">
+          <h2 class="product-heading">What Is FormX AI Document Splitter?</h2>
+          <div class="product-subheading">
+            FormX AI Document Splitter reads the content of a PDF and automatically identifies where each individual document begins and ends — then splits the file and names each output based on what's inside. Unlike traditional PDF splitters that cut by page number, FormX understands content to split intelligently.
+          </div>
+          <a href="/schedule-demo/" class="inter-tight link-semibold text-highlight-green-20" style="margin-top:16px;display:inline-block">Reach out to us here →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <HowItWorks
+    tightPadding
+    heading="How FormX AI Document Splitter Works"
+    steps={[
+      {
+        icon: '/images/tools/icons/paper-upload.svg',
+        title: 'Upload Your PDF',
+        description: 'Upload a PDF containing multiple or mixed documents — a batch of vendor invoices, contracts, statements, IDs, or any mix. Up to 10MB, first 20 pages processed in the free tool.',
+      },
+      {
+        icon: '/images/tools/icons/swap.svg',
+        title: 'FormX Splits Each Document',
+        description: 'FormX understands the content of every page and determines where each document starts and ends — identifying document type, page range, splits and generates an appropriate file name automatically.',
+      },
+      {
+        icon: '/images/tools/icons/paper-download.svg',
+        title: 'Download Your Split Documents',
+        description: 'Download the zip file containing all the split documents. Need to upload in bulk, or customise how files are named?',
+      },
+    ]}
+  />
+
+  <ClientLogosBar />
 
   <CTACard
     heading="Get started with FormX.ai"

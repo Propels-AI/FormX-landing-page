@@ -3,6 +3,10 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import CTACard from '@/components/sections/CTACard.astro';
 import FAQSection from '@/components/sections/FAQSection.astro';
 import StatCard from '@/components/sections/StatCard.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import FeatureGrid from '@/components/sections/FeatureGrid.astro';
+import ApiResponseExample from '@/components/sections/ApiResponseExample.astro';
+import ClientLogosBar from '@/components/sections/ClientLogosBar.astro';
 ---
 
 <PageLayout
@@ -14,12 +18,107 @@ import StatCard from '@/components/sections/StatCard.astro';
   <section class="title-2 bg-f7f8fc">
     <div class="w-layout-blockcontainer pagetitle__container w-container">
       <h1 class="pricing-title"><span class="heading-gradient">W-2 Extractor<br/>‍</span>Pull Every Field from Any W-2</h1>
-      <p class="section__header__content">Upload a W-2 PDF or image via the FormX REST API or web tool. Extract wages, withholdings, state and federal taxes, employer EIN, and all Boxes 1–20 as structured JSON — no templates, works on ADP, Paychex, Gusto, and Workday-generated W-2s.</p>
+      <p class="section__header__content">Upload a W-2 PDF or image via the FormX REST API or web tool. Extract wages, withholdings, state and federal taxes, employer EIN, and all Boxes 1–20 as <span class="text-span-25">structured JSON</span> — no templates, works on ADP, Paychex, Gusto, and Workday-generated W-2s.</p>
       <div class="w-embed w-iframe">
         <iframe src="https://widgets.formx.ai/w2-form/" style="width: 100%; height: 600px" frameBorder="0"></iframe>
       </div>
     </div>
   </section>
+
+  <div class="section product-section bg-f7f8fc">
+    <div class="container-default w-container min-w-0 max-w-full">
+      <div class="product-heading-content-wrapper">
+        <div class="product-heading-wrapper mw-800px">
+          <h2 class="product-heading">What does this Form W-2 Extractor do?</h2>
+          <div class="product-subheading">
+            This form W-2 data extractor reads IRS Form W-2 PDFs or image files and converts them into Excel or structured JSON automatically. Instead of manually transcribing Box 1 through Box 20, FormX uses OCR and AI to return the values in seconds. Used for income verification, year-end payroll processing, and feeding wage data directly into HR, accounting, and ERP systems.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <HowItWorks
+    tightPadding
+    heading="How the W-2 Extractor Works"
+    subheading="FormX Form W-2 Extractor reads your W-2 and pulls out every field automatically — no typing, no setup, no manual cross-checking. Upload your form and get your data back in seconds, ready to download and use."
+    steps={[
+      {
+        icon: '/images/tools/icons/paper-upload.svg',
+        title: 'Upload Form W-2',
+        description: 'Upload a single Form W-2 PDF, JPG, or PNG into the tool. Scanned copies, photos, and digital PDFs all work.',
+      },
+      {
+        icon: '/images/tools/icons/swap.svg',
+        title: 'Extraction',
+        description: 'FormX reads the form, identifies each box field, and validates the values for consistency.',
+      },
+      {
+        icon: '/images/tools/icons/paper-download.svg',
+        title: 'Download',
+        description: 'Get your Form W-2 in Excel or JSON format. Ready for you to use immediately or import into your tax software, ERP etc.',
+      },
+    ]}
+  />
+
+  <FeatureGrid
+    tightPadding
+    heading="Use Cases"
+    columns={3}
+    bgClass="bg-f7f8fc"
+    cards={[
+      {
+        icon: '/images/tools/icons/icon-mortgage.svg',
+        title: 'Mortgage & Lending',
+        description: 'Lenders and mortgage brokers use FormX to verify borrower income from W-2s instantly, reducing manual transcription and speeding up loan processing.',
+      },
+      {
+        icon: '/images/tools/icons/icon-accounting.svg',
+        title: 'Accounting & Tax Firms',
+        description: 'Tax preparers receive W-2s from dozens of clients every January. FormX lets them extract W-2 data in bulk and feed it directly into tax software.',
+      },
+      {
+        icon: '/images/tools/icons/icon-hr.svg',
+        title: 'HR & Payroll Teams',
+        description: 'HR teams verifying historical earnings or handling employee queries use FormX to extract W-2 data from archived PDFs without reopening payroll records.',
+      },
+      {
+        icon: '/images/tools/icons/icon-screening.svg',
+        title: 'Background Screening & Income Verification',
+        description: 'Background screening companies and income verification services use FormX to validate reported earnings directly from W-2 source documents.',
+      },
+      {
+        icon: '/images/tools/icons/icon-banking.svg',
+        title: 'Financial Services & Banking',
+        description: 'Banks and lenders use W-2 data to verify income for personal loans, credit decisions, and account opening workflows.',
+      },
+    ]}
+  />
+
+  <div class="section product-section bg-f7f8fc">
+    <div class="container-default w-container min-w-0 max-w-full">
+      <div class="product-heading-content-wrapper">
+        <div class="product-heading-wrapper mw-800px">
+          <h2 class="product-heading">W-2 vs 1099 — What's the Difference?</h2>
+          <div class="product-subheading">
+            If you're comparing contractor (1099) income to employee (W-2) income, the key difference is tax responsibility. As a 1099 contractor, you pay self-employment tax (15.3%) on top of income tax whereas a W-2 employee splits this with their employer. A rough rule of thumb: multiply your desired W-2 salary by 1.25–1.4 to find an equivalent 1099 rate that covers your additional tax burden and lack of benefits.
+          </div>
+          <div class="product-subheading" style="margin-top:16px">
+            FormX extracts data from both 1099 and W-2 forms. If you need to compare income figures across both document types, upload each to FormX and get structured data for both in seconds.
+          </div>
+          <a href="/tools/1099-extractor/" class="inter-tight link-semibold text-highlight-green-20" style="margin-top:16px;display:inline-block">Need to extract 1099 forms? Try it out here →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ApiResponseExample
+    tightPadding
+    imageSrc="/images/tools/examples/w2-json-example.svg"
+    imageAlt="W-2 API JSON response example"
+  />
+
+  <ClientLogosBar />
 
   <CTACard
     heading="Get started with FormX.ai"
@@ -52,7 +151,7 @@ import StatCard from '@/components/sections/StatCard.astro';
       },
       {
         question: "Can FormX extract W-2 data via API for batch processing?",
-        answer: `Yes. FormX provides a REST API that accepts W-2 PDFs and returns structured JSON. API\u00a0documentation is available at <a href="https://help.formx.ai/reference/document-extraction">here</a>. You can also customise extracted fields through the FormX portal.<br />`,
+        answer: `Yes. FormX provides a REST API that accepts W-2 PDFs and returns structured JSON. API documentation is available at <a href="https://help.formx.ai/reference/document-extraction">here</a>. You can also customise extracted fields through the FormX portal.<br />`,
       },
       {
         question: "What is the difference between a W-2 and a 1099, and can FormX extract both?",

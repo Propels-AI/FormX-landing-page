@@ -1,0 +1,16 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="70" height="70" rx="24" fill="#8B5CF6" fill-opacity="0.1"/>
+<!-- Document -->
+<rect x="19" y="14" width="26" height="34" rx="3" fill="white" stroke="#8B5CF6" stroke-width="2"/>
+<rect x="19" y="14" width="26" height="34" rx="3" fill="#8B5CF6" fill-opacity="0.15"/>
+<!-- Folded corner -->
+<path d="M37 14L45 22H37V14Z" fill="#8B5CF6" fill-opacity="0.4"/>
+<path d="M37 14V22H45" stroke="#8B5CF6" stroke-width="1.5"/>
+<!-- Lines -->
+<line x1="24" y1="29" x2="40" y2="29" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+<line x1="24" y1="34" x2="40" y2="34" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+<line x1="24" y1="39" x2="33" y2="39" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+<!-- Checkmark badge -->
+<circle cx="47" cy="49" r="9" fill="#8B5CF6"/>
+<path d="M42.5 49L45.5 52L51.5 46" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,54 @@
+---
+interface Step {
+  icon: string;
+  stepLabel?: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  heading: string;
+  subheading?: string;
+  bgClass?: string;
+  tightPadding?: boolean;
+  steps: Step[];
+}
+
+const { heading, subheading, bgClass = 'bg-f7f8fc', tightPadding = false, steps } = Astro.props;
+const sectionClass = tightPadding ? 'section advantage-section' : 'section product-section';
+---
+
+<div class={`${sectionClass} ${bgClass}`.trim()}>
+  <div class="container-default w-container min-w-0 max-w-full">
+    <div class="product-heading-content-wrapper">
+      <div class="product-heading-wrapper mw-800px">
+        <h2 class="product-heading">{heading}</h2>
+        {subheading && <div class="product-subheading">{subheading}</div>}
+      </div>
+      <div class="product-content-wrapper">
+        <div class="_3-block-grid">
+          {steps.map((step, i) => (
+            <div class="plain-svg-card card-bg-white">
+              <div class="card-svg-block">
+                <img
+                  src={step.icon}
+                  loading="lazy"
+                  width="61"
+                  alt=""
+                  class="card-svg small img-fluid"
+                />
+              </div>
+              <div class="svg-card-content-wrapper">
+                <div class="paragraph-small text-highlight-green-20 inter-tight" style="font-weight:600;margin-bottom:4px">
+                  {step.stepLabel ?? `Step ${i + 1}.`}
+                </div>
+                <h6 class="svg-card-title">{step.title}</h6>
+                <div class="svg-card-description">{step.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

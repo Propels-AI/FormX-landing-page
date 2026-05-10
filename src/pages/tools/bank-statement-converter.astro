@@ -3,6 +3,8 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import CTACard from '@/components/sections/CTACard.astro';
 import FAQSection from '@/components/sections/FAQSection.astro';
 import StatCard from '@/components/sections/StatCard.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import ClientLogosBar from '@/components/sections/ClientLogosBar.astro';
 ---
 
 <PageLayout
@@ -14,12 +16,36 @@ import StatCard from '@/components/sections/StatCard.astro';
   <section class="title-2 bg-f7f8fc">
     <div class="w-layout-blockcontainer pagetitle__container w-container">
       <h1 class="pricing-title">Bank Statement Converter</h1>
-      <p class="section__header__content">Convert bank statement PDFs to Excel, CSV, or JSON via API or web upload. FormX extracts account holder details, opening and closing balances, and every transaction — date, description, debit, credit — from any bank layout, without templates.</p>
+      <p class="section__header__content"><span class="text-span-26">Convert bank statement PDFs to Excel, CSV, or JSON</span> via API or web upload. FormX extracts account holder details, opening and closing balances, and every transaction — date, description, debit, credit — from any bank layout, <span class="text-span-25">without templates</span>.</p>
       <div class="w-embed w-iframe">
         <iframe src="https://widgets.formx.ai/bank-statement" style="width: 100%; height: 600px" frameBorder="0"></iframe>
       </div>
     </div>
   </section>
+
+  <HowItWorks
+    tightPadding
+    heading="How to Convert Your PDF Bank Statements Into Excel, CSV, JSON"
+    steps={[
+      {
+        icon: '/images/tools/icons/paper-upload.svg',
+        title: 'Upload PDF Bank Statement',
+        description: 'Upload a PDF bank statement — single page or multi-page. Scanned copies, phone photos, and digitally generated PDFs all work.',
+      },
+      {
+        icon: '/images/tools/icons/swap.svg',
+        title: 'Convert to Structured Data',
+        description: 'FormX reads account details, balances, and every transaction row — date, description, debit, credit — and structures the data automatically.',
+      },
+      {
+        icon: '/images/tools/icons/paper-download.svg',
+        title: 'Download Excel, CSV, or JSON',
+        description: 'Download your results in the format you need, ready to import into Excel, Google Sheets, QuickBooks, Xero, or your own system.',
+      },
+    ]}
+  />
+
+  <ClientLogosBar />
 
   <CTACard
     heading="Get started with FormX.ai"
@@ -60,7 +86,7 @@ import StatCard from '@/components/sections/StatCard.astro';
   <div class="section product-section bg-f7f8fc">
     <div class="container-default w-container">
       <div class="product-heading-content-wrapper">
-        <div class="product-heading-wrapper">
+        <div class="product-heading-wrapper mw-800px">
           <h2 class="product-heading">Make Your Bank Statement Conversion Intelligent and Automated with FormX</h2>
         </div>
         <div class="product-content-wrapper">

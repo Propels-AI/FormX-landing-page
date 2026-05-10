@@ -12,18 +12,20 @@ interface Props {
   subheading?: string;
   columns?: 3 | 4;
   bgClass?: string;
+  tightPadding?: boolean;
   cards: Card[];
 }
 
-const { heading, subheading, columns = 3, bgClass = '', cards } = Astro.props;
+const { heading, subheading, columns = 3, bgClass = '', tightPadding = false, cards } = Astro.props;
 
 const gridClass = columns === 4 ? '_4-block-grid' : '_3-block-grid';
+const sectionClass = tightPadding ? 'section advantage-section' : 'section product-section';
 ---
 
-<div class={`section product-section ${bgClass}`.trim()}>
+<div class={`${sectionClass} ${bgClass}`.trim()}>
   <div class="container-default w-container min-w-0 max-w-full">
     <div class="product-heading-content-wrapper">
-      <div class="product-heading-wrapper">
+      <div class="product-heading-wrapper mw-800px">
         <h2 class="product-heading">{heading}</h2>
         {subheading && <div class="product-subheading">{subheading}</div>}
       </div>

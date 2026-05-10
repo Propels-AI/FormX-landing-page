@@ -3,6 +3,10 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import CTACard from '@/components/sections/CTACard.astro';
 import FAQSection from '@/components/sections/FAQSection.astro';
 import StatCard from '@/components/sections/StatCard.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import FeatureGrid from '@/components/sections/FeatureGrid.astro';
+import ApiResponseExample from '@/components/sections/ApiResponseExample.astro';
+import ClientLogosBar from '@/components/sections/ClientLogosBar.astro';
 ---
 
 <PageLayout
@@ -14,12 +18,83 @@ import StatCard from '@/components/sections/StatCard.astro';
   <section class="title-2 bg-f7f8fc">
     <div class="w-layout-blockcontainer pagetitle__container w-container">
       <h1 class="pricing-title"><span class="heading-gradient">Invoice OCR API<br/></span>for Enterprise Integration</h1>
-      <p class="section__header__content">Extract structured invoice data via REST API. Integrate with SAP, NetSuite, QuickBooks, or any ERP system. JSON or Excel output.</p>
+      <p class="section__header__content"><span class="text-span-26">Extract structured invoice data via REST API.</span> Integrate with SAP, NetSuite, QuickBooks, or any ERP system. <span class="text-span-25">JSON or Excel output.</span></p>
       <div class="w-embed w-iframe">
         <iframe src="https://widgets.formx.ai/invoice/" style="width: 100%; height: 600px" frameBorder="0"></iframe>
       </div>
     </div>
   </section>
+
+  <HowItWorks
+    tightPadding
+    heading="How the Invoice OCR API Works"
+    subheading="FormX Invoice OCR API automatically extracts structured data from invoices via REST API — returning clean JSON ready to feed directly into SAP, NetSuite, QuickBooks, or any ERP system."
+    steps={[
+      {
+        icon: '/images/tools/icons/paper-upload.svg',
+        title: 'Upload Invoice',
+        description: 'Upload a single invoice to test the extractor, or call our REST API to process invoices at scale. No templates, no training required.',
+      },
+      {
+        icon: '/images/tools/icons/swap.svg',
+        title: 'Convert to Structured Data',
+        description: 'FormX AI identifies and extracts all invoice fields. Vendor, line items, totals, dates, PO references, and returns clean, structured JSON ready for your systems.',
+      },
+      {
+        icon: '/images/tools/icons/paper-download.svg',
+        title: 'Use the Data Your Way',
+        description: 'Download as Excel, CSV, or JSON for manual use, or pipe the API response directly into SAP, NetSuite, QuickBooks, or any ERP via webhook or batch processing.',
+      },
+    ]}
+  />
+
+  <FeatureGrid
+    tightPadding
+    bgClass="bg-f7f8fc"
+    heading="Integrate With Your Existing Systems"
+    subheading="FormX connects directly with the ERP and accounting platforms your finance team already uses, no middleware required."
+    columns={3}
+    cards={[
+      {
+        icon: '/images/tools/erp/sap.svg',
+        iconWidth: 70,
+        title: 'SAP S/4HANA & Business One',
+        description: 'Automate AP invoice processing directly into SAP. Eliminate manual data entry for your accounts payable team.',
+      },
+      {
+        icon: '/images/tools/erp/netsuite.svg',
+        iconWidth: 70,
+        title: 'Oracle NetSuite',
+        description: 'Push extracted invoice data into NetSuite automatically. Built for finance teams processing hundreds of invoices monthly.',
+      },
+      {
+        icon: '/images/tools/erp/quickbooks.svg',
+        iconWidth: 70,
+        title: 'QuickBooks Online & Desktop',
+        description: 'Sync invoice data with QuickBooks in real time. Works with both Online and Desktop editions.',
+      },
+      {
+        icon: '/images/tools/erp/dynamics-365.svg',
+        iconWidth: 70,
+        title: 'Microsoft Dynamics 365',
+        description: 'Connect invoice extraction to Dynamics 365 Finance & Supply Chain via REST API or webhook.',
+      },
+      {
+        icon: '/images/tools/erp/rest-api.svg',
+        iconWidth: 70,
+        title: 'Any ERP via REST API',
+        description: 'Full REST API with SDKs for Python, Node.js, Java, and .NET. Integrate with any system in hours, not weeks.',
+      },
+    ]}
+  />
+
+  <ApiResponseExample
+    tightPadding
+    imageSrc="/images/tools/examples/invoice-json-example.svg"
+    imageAlt="Invoice API JSON response example"
+  />
+
+  <ClientLogosBar />
 
   <CTACard
     heading="Get started with FormX.ai"
@@ -55,7 +130,7 @@ import StatCard from '@/components/sections/StatCard.astro';
         answer: `Certainly. Invoice contains financial and personal data that should only be accessible to authorized parties. FormX does not use or store the extracted data in any permanent storage. We are also ISO27001 certified and SoC 2 Type 2 audited. Read our <a href="/data-privacy-policy/" target="_blank">data privacy policy</a> for more.<br />`,
       },
       {
-        question: "What does the Invoice OCR API\u00a0JSON response look like?",
+        question: "What does the Invoice OCR API JSON response look like?",
         answer: `The API returns a structured JSON object containing all extracted invoice fields: vendor name and address, invoice number, issue and due dates, line items (description, quantity, unit price, tax), subtotal, tax total, grand total, currency, and payment terms. See our <a href="https://help.formx.ai/reference/document-extraction" target="_blank">API documentation here</a>. You can also customise extracted fields through the FormX portal.<br />`,
       },
       {
