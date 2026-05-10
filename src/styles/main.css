@@ -10449,7 +10449,7 @@ figcaption {
   display: flex;
 }
 .mobile-footer_left-image {
-  transform: translateY(-96px);
+  transform: translateY(-56px);
 }
 .mobile-footer_right_top-image-wrap {
   max-width: 80px;
